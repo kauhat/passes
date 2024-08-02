@@ -40,7 +40,7 @@ abstract class BaseClass extends AbstractClass
          * The issuer name. Recommended maximum length is 20 characters to ensure full string is displayed on
          * smaller screens.
          */
-        #[Length(max: 20)]
+        #[Length(max: 20, groups: ['recommended'])]
         public ?string $issuerName = null,
         /**
          * Optional.
@@ -96,6 +96,7 @@ abstract class BaseClass extends AbstractClass
          * Translated strings for the issuerName. Recommended maximum length is 20 characters to ensure full string
          * is displayed on smaller screens.
          */
+        #[Length(max: 20, groups: ['recommended'])]
         public ?LocalizedString $localizedIssuerName = null,
         ...$args,
     ) {

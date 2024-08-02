@@ -24,7 +24,7 @@ class OfferClass extends BaseClass
          * to ensure full string is displayed on smaller screens.
          */
         #[NotBlank]
-        #[Length(max: 60)]
+        #[Length(max: 60, groups: ['recommended'])]
         public string $title,
         /**
          * Required.
@@ -46,7 +46,7 @@ class OfferClass extends BaseClass
          * characters to ensure full string is displayed on smaller screens.
          */
         #[NotBlank]
-        #[Length(max: 12)]
+        #[Length(max: 12, groups: ['recommended'])]
         public string $provider,
         /**
          * Optional.
@@ -78,12 +78,14 @@ class OfferClass extends BaseClass
          * Translated strings for the title. Recommended maximum length is 60 characters to ensure full
          * string is displayed on smaller screens.
          */
+        #[Length(max: 60, groups: ['recommended'])]
         public ?LocalizedString $localizedTitle = null,
         /**
          * Optional.
          * Translated strings for the provider. Recommended maximum length is 12 characters to ensure full
          * string is displayed on smaller screens.
          */
+        #[Length(max: 12, groups: ['recommended'])]
         public ?LocalizedString $localizedProvider = null,
         /**
          * Optional.
@@ -100,12 +102,13 @@ class OfferClass extends BaseClass
          * A shortened version of the title of the offer, such as "20% off," shown to users as a quick reference
          * to the offer contents. Recommended maximum length is 20 characters.
          */
-        #[Length(max: 20)]
+        #[Length(max: 20, groups: ['recommended'])]
         public ?string $shortTitle = null,
         /**
          * Optional.
          * Translated strings for the short title. Recommended maximum length is 20 characters.
          */
+        #[Length(max: 20, groups: ['recommended'])]
         public ?LocalizedString $localizedShortTitle = null,
         ...$args,
     ) {

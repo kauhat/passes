@@ -13,14 +13,14 @@ class TextModuleData extends Component
          * The header of the Text Module. Recommended maximum length is 35 characters to ensure full string is
          * displayed on smaller screens.
          */
-        #[Length(max: 35)]
+        #[Length(max: 35, groups: ['recommended'])]
         public ?string $header = null,
         /**
          * Optional.
          * The body of the Text Module, which is defined as an uninterrupted string. Recommended maximum length is
          * 500 characters to ensure full string is displayed on smaller screens.
          */
-        #[Length(max: 500)]
+        #[Length(max: 500, groups: ['recommended'])]
         public ?string $body = null,
         /**
          * Optional.

@@ -21,13 +21,13 @@ class LoyaltyObject extends BaseObject
          * The loyalty account holder name, such as "John Smith." Recommended maximum length is 20 characters
          * to ensure full string is displayed on smaller screens.
          */
-        #[Length(max: 20)]
+        #[Length(max: 20, groups: ['recommended'])]
         public ?string $accountName = null,
         /**
          * Optional.
          * The loyalty account identifier. Recommended maximum length is 20 characters.
          */
-        #[Length(max: 20)]
+        #[Length(max: 20, groups: ['recommended'])]
         public ?string $accountId = null,
         /**
          * Optional.

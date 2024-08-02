@@ -20,13 +20,14 @@ class Uri extends Component
          * The URI's title appearing in the app as text. Recommended maximum is 20 characters to ensure full string
          * is displayed on smaller screens.
          */
-        #[Length(max: 20)]
+        #[Length(max: 20, groups: ['recommended'])]
         public ?string $description = null,
         /**
          * Optional.
          * Translated strings for the description. Recommended maximum is 20 characters to ensure full string is
          * displayed on smaller screens.
          */
+        #[Length(max: 20, groups: ['recommended'])]
         public ?LocalizedString $localizedDescription = null,
         /**
          * Optional.

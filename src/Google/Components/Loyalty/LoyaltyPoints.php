@@ -19,12 +19,13 @@ class LoyaltyPoints extends Component
          * Optional.
          * The loyalty points label, such as "Points". Recommended maximum length is 9 characters.
          */
-        #[Length(max: 9)]
+        #[Length(max: 9, groups: ['recommended'])]
         public ?string $label = null,
         /**
          * Optional.
          * Translated strings for the label. Recommended maximum length is 9 characters.
          */
+        #[Length(max: 9, groups: ['recommended'])]
         public ?LocalizedString $localizedLabel = null,
     ) {
         parent::__construct();

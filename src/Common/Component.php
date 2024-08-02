@@ -14,6 +14,9 @@ abstract class Component extends DataTransferObject implements JsonSerializable
         $validator = Validation::createValidatorBuilder()->enableAttributeMapping()->getValidator();
         $errors = $validator->validate($this);
 
+        // TODO: Handle recommended constraints, e.g.
+        // $errors = $validator->validate($this, null, ['recommended']);
+
         if (count($errors) > 0) {
             $messages = [];
 

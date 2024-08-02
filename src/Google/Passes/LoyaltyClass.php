@@ -35,28 +35,28 @@ class LoyaltyClass extends BaseClass
          * The account name label, such as "Member Name." Recommended maximum length is 15 characters to
          * ensure full string is displayed on smaller screens.
          */
-        #[Length(max: 15)]
+        #[Length(max: 15, groups: ['recommended'])]
         public ?string $accountNameLabel = null,
         /**
          * Optional.
          * The account ID label, such as "Member ID." Recommended maximum length is 15 characters to ensure
          * full string is displayed on smaller screens.
          */
-        #[Length(max: 15)]
+        #[Length(max: 15, groups: ['recommended'])]
         public ?string $accountIdLabel = null,
         /**
          * Optional.
          * The rewards tier label, such as "Rewards Tier." Recommended maximum length is 9 characters to ensure
          * full string is displayed on smaller screens.
          */
-        #[Length(max: 9)]
+        #[Length(max: 9, groups: ['recommended'])]
         public ?string $rewardsTierLabel = null,
         /**
          * Optional.
          * The rewards tier, such as "Gold" or "Platinum." Recommended maximum length is 7 characters to ensure
          * full string is displayed on smaller screens.
          */
-        #[Length(max: 7)]
+        #[Length(max: 7, groups: ['recommended'])]
         public ?string $rewardsTier = null,
         /**
          * Optional.
@@ -69,24 +69,28 @@ class LoyaltyClass extends BaseClass
          * Translated strings for the accountNameLabel. Recommended maximum length is 15 characters to ensure
          * full string is displayed on smaller screens.
          */
+        #[Length(max: 15, groups: ['recommended'])]
         public ?LocalizedString $localizedAccountNameLabel = null,
         /**
          * Optional.
          * Translated strings for the accountIdLabel. Recommended maximum length is 15 characters to ensure full
          * string is displayed on smaller screens.
          */
+        #[Length(max: 15, groups: ['recommended'])]
         public ?LocalizedString $localizedAccountIdLabel = null,
         /**
          * Optional.
          * Translated strings for the rewardsTierLabel. Recommended maximum length is 9 characters to ensure full
          * string is displayed on smaller screens.
          */
+        #[Length(max: 9, groups: ['recommended'])]
         public ?LocalizedString $localizedRewardsTierLabel = null,
         /**
          * Optional.
          * Translated strings for the rewardsTier. Recommended maximum length is 7 characters to ensure full string
          * is displayed on smaller screens.
          */
+        #[Length(max: 7, groups: ['recommended'])]
         public ?LocalizedString $localizedRewardsTier = null,
         /**
          * Optional.
