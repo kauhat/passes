@@ -5,7 +5,6 @@ namespace Chiiya\Passes\Google\Passes;
 use Chiiya\Passes\Common\Casters\LegacyValueCaster;
 use Chiiya\Passes\Common\Validation\HexColor;
 use Chiiya\Passes\Common\Validation\MaxItems;
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Common\Validation\Required;
 use Chiiya\Passes\Common\Validation\ValueIn;
 use Chiiya\Passes\Google\Components\Common\Image;
@@ -26,7 +25,6 @@ abstract class BaseClass extends AbstractClass
      * smaller screens.
      */
     #[Required]
-    #[MaxLength(20)]
     public ?string $issuerName;
 
     /**

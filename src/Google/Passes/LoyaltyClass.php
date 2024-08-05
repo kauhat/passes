@@ -2,7 +2,6 @@
 
 namespace Chiiya\Passes\Google\Passes;
 
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Common\Validation\Required;
 use Chiiya\Passes\Google\Components\Common\Image;
 use Chiiya\Passes\Google\Components\Common\LocalizedString;
@@ -34,7 +33,6 @@ class LoyaltyClass extends BaseClass
      * The account name label, such as "Member Name." Recommended maximum length is 15 characters to
      * ensure full string is displayed on smaller screens.
      */
-    #[MaxLength(15)]
     public ?string $accountNameLabel;
 
     /**
@@ -42,7 +40,6 @@ class LoyaltyClass extends BaseClass
      * The account ID label, such as "Member ID." Recommended maximum length is 15 characters to ensure
      * full string is displayed on smaller screens.
      */
-    #[MaxLength(15)]
     public ?string $accountIdLabel;
 
     /**
@@ -50,7 +47,6 @@ class LoyaltyClass extends BaseClass
      * The rewards tier label, such as "Rewards Tier." Recommended maximum length is 9 characters to ensure
      * full string is displayed on smaller screens.
      */
-    #[MaxLength(9)]
     public ?string $rewardsTierLabel;
 
     /**
@@ -58,7 +54,6 @@ class LoyaltyClass extends BaseClass
      * The rewards tier, such as "Gold" or "Platinum." Recommended maximum length is 7 characters to ensure
      * full string is displayed on smaller screens.
      */
-    #[MaxLength(7)]
     public ?string $rewardsTier;
 
     /**

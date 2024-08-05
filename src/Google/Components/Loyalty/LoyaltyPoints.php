@@ -3,7 +3,6 @@
 namespace Chiiya\Passes\Google\Components\Loyalty;
 
 use Chiiya\Passes\Common\Component;
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Common\Validation\Required;
 use Chiiya\Passes\Google\Components\Common\LocalizedString;
 
@@ -13,7 +12,6 @@ class LoyaltyPoints extends Component
      * Optional.
      * The loyalty points label, such as "Points". Recommended maximum length is 9 characters.
      */
-    #[MaxLength(9)]
     public ?string $label;
 
     /**

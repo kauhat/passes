@@ -3,7 +3,6 @@
 namespace Chiiya\Passes\Google\Components\Common;
 
 use Chiiya\Passes\Common\Component;
-use Chiiya\Passes\Common\Validation\MaxLength;
 
 class TextModuleData extends Component
 {
@@ -12,7 +11,6 @@ class TextModuleData extends Component
      * The header of the Text Module. Recommended maximum length is 35 characters to ensure full string is
      * displayed on smaller screens.
      */
-    #[MaxLength(35)]
     public ?string $header;
 
     /**
@@ -20,7 +18,6 @@ class TextModuleData extends Component
      * The body of the Text Module, which is defined as an uninterrupted string. Recommended maximum length is
      * 500 characters to ensure full string is displayed on smaller screens.
      */
-    #[MaxLength(500)]
     public ?string $body;
 
     /**

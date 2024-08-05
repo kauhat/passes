@@ -3,7 +3,6 @@
 namespace Chiiya\Passes\Google\Passes;
 
 use Chiiya\Passes\Common\Casters\LegacyValueCaster;
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Common\Validation\Required;
 use Chiiya\Passes\Common\Validation\ValueIn;
 use Chiiya\Passes\Google\Components\Common\Image;
@@ -23,7 +22,6 @@ class OfferClass extends BaseClass
      * to ensure full string is displayed on smaller screens.
      */
     #[Required]
-    #[MaxLength(60)]
     public ?string $title;
 
     /**
@@ -47,7 +45,6 @@ class OfferClass extends BaseClass
      * characters to ensure full string is displayed on smaller screens.
      */
     #[Required]
-    #[MaxLength(12)]
     public ?string $provider;
 
     /**
@@ -105,7 +102,6 @@ class OfferClass extends BaseClass
      * A shortened version of the title of the offer, such as "20% off," shown to users as a quick reference
      * to the offer contents. Recommended maximum length is 20 characters.
      */
-    #[MaxLength(20)]
     public ?string $shortTitle;
 
     /**

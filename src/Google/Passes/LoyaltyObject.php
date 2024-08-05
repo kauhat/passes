@@ -2,7 +2,6 @@
 
 namespace Chiiya\Passes\Google\Passes;
 
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Google\Components\Loyalty\LoyaltyPoints;
 
 class LoyaltyObject extends BaseObject
@@ -21,14 +20,12 @@ class LoyaltyObject extends BaseObject
      * The loyalty account holder name, such as "John Smith." Recommended maximum length is 20 characters
      * to ensure full string is displayed on smaller screens.
      */
-    #[MaxLength(20)]
     public ?string $accountName;
 
     /**
      * Optional.
      * The loyalty account identifier. Recommended maximum length is 20 characters.
      */
-    #[MaxLength(20)]
     public ?string $accountId;
 
     /**
