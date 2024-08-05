@@ -3,7 +3,6 @@
 namespace Chiiya\Passes\Google\Components\Common;
 
 use Chiiya\Passes\Common\Component;
-use Chiiya\Passes\Common\Validation\MaxLength;
 use Chiiya\Passes\Common\Validation\Required;
 
 class Uri extends Component
@@ -20,7 +19,6 @@ class Uri extends Component
      * The URI's title appearing in the app as text. Recommended maximum is 20 characters to ensure full string
      * is displayed on smaller screens.
      */
-    #[MaxLength(20)]
     public ?string $description;
 
     /**
