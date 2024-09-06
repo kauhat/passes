@@ -20,6 +20,7 @@ use Chiiya\Passes\Google\Components\Generic\Notifications;
 use Chiiya\Passes\Google\Components\Generic\UpcomingNotification;
 use Chiiya\Passes\Google\Enumerators\BarcodeRenderEncoding;
 use Chiiya\Passes\Google\Enumerators\BarcodeType;
+use Chiiya\Passes\Google\Enumerators\Generic\GenericType;
 use Chiiya\Passes\Google\Enumerators\Offer\RedemptionChannel;
 use Chiiya\Passes\Google\Enumerators\ReviewStatus;
 use Chiiya\Passes\Google\Enumerators\State;
@@ -38,6 +39,7 @@ class Passes
             'redemptionChannel' => RedemptionChannel::INSTORE,
             'provider' => 'ACME',
             'titleImage' => Image::make('https://example.org/title.png'),
+            'wideTitleImage' => Image::make('https://example.org/wide-title.png'),
             'helpUri' => Uri::make('https://example.org/help'),
             'localizedDetails' => LocalizedString::make('en', '::value::'),
             'imageModulesData' => [new ImageModuleData(mainImage: Image::make('https://example.org/wallet.png'))],
@@ -92,6 +94,7 @@ class Passes
     public static function genericObject(): array
     {
         return [
+            'genericType' => GenericType::GENERIC_TYPE_UNSPECIFIED,
             'id' => '1234567891234567891.fb1e9730-a83b-11ed-afa1-0242ac120002',
             'classId' => '1234567891234567891.718bf4ae-a7a5-11ed-afa1-0242ac120002',
             'cardTitle' => LocalizedString::make('en', 'Card title'),
@@ -99,6 +102,7 @@ class Passes
             'hasUsers' => true,
             'header' => LocalizedString::make('en', 'Header'),
             'logo' => Image::make('https://domain.com/logo.png'),
+            'wideLogo' => Image::make('https://domain.com/wide-logo.png'),
             'heroImage' => Image::make('https://domain.com/hero-image.png'),
             'hexBackgroundColor' => '#333',
             'state' => State::ACTIVE,
