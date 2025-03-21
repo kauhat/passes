@@ -5,22 +5,11 @@ namespace Chiiya\Passes\Google\Passes;
 use Antwerpes\DataTransferObject\Attributes\Cast;
 use Antwerpes\DataTransferObject\Casts\ArrayCaster;
 use Chiiya\Passes\Google\Components\Common\LatLongPoint;
-use Chiiya\Passes\Google\Components\Common\Message;
 use Symfony\Component\Validator\Constraints\Count;
 
 abstract class BaseObject extends AbstractObject
 {
     public function __construct(
-        /**
-         * Optional.
-         * An array of messages displayed in the app. All users of this object will receive its associated messages.
-         * The maximum number of these fields is 10.
-         *
-         * @var Message[]
-         */
-        #[Cast(ArrayCaster::class, Message::class)]
-        #[Count(max: 10)]
-        public array $messages = [],
         /**
          * Optional.
          * The list of locations where the object can be used. The platform uses this information to trigger

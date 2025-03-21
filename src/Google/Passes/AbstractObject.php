@@ -12,6 +12,7 @@ use Chiiya\Passes\Google\Components\Common\GroupingInfo;
 use Chiiya\Passes\Google\Components\Common\Image;
 use Chiiya\Passes\Google\Components\Common\ImageModuleData;
 use Chiiya\Passes\Google\Components\Common\LinksModuleData;
+use Chiiya\Passes\Google\Components\Common\Message;
 use Chiiya\Passes\Google\Components\Common\RotatingBarcode;
 use Chiiya\Passes\Google\Components\Common\TextModuleData;
 use Chiiya\Passes\Google\Components\Common\TimeInterval;
@@ -113,6 +114,16 @@ class AbstractObject extends Component
          * Indicates if the object has users. This field is set by the platform.
          */
         public ?bool $hasUsers = null,
+        /**
+         * Optional.
+         * An array of messages displayed in the app. All users of this object will receive its associated messages.
+         * The maximum number of these fields is 10.
+         *
+         * @var Message[]
+         */
+        #[Cast(ArrayCaster::class, Message::class)]
+        #[Count(max: 10)]
+        public array $messages = [],
     ) {
         parent::__construct();
     }

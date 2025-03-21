@@ -10,6 +10,7 @@ use Chiiya\Passes\Google\Components\Common\CallbackOptions;
 use Chiiya\Passes\Google\Components\Common\ClassTemplate\ClassTemplateInfo;
 use Chiiya\Passes\Google\Components\Common\ImageModuleData;
 use Chiiya\Passes\Google\Components\Common\LinksModuleData;
+use Chiiya\Passes\Google\Components\Common\Message;
 use Chiiya\Passes\Google\Components\Common\SecurityAnimation;
 use Chiiya\Passes\Google\Components\Common\TextModuleData;
 use Chiiya\Passes\Google\Enumerators\MultipleDevicesAndHoldersAllowedStatus;
@@ -102,6 +103,16 @@ abstract class AbstractClass extends Component
             ViewUnlockRequirement::UNLOCK_REQUIRED_TO_VIEW,
         ])]
         protected ?string $viewUnlockRequirement = null,
+        /**
+         * Optional.
+         * An array of messages displayed in the app. All users of this object will receive its associated messages.
+         * The maximum number of these fields is 10.
+         *
+         * @var Message[]
+         */
+        #[Cast(ArrayCaster::class, Message::class)]
+        #[Count(max: 10)]
+        public array $messages = [],
     ) {
         parent::__construct();
     }
