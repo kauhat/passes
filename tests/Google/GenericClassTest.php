@@ -2,6 +2,7 @@
 
 namespace Chiiya\Passes\Tests\Google;
 
+use Chiiya\Passes\Google\Components\Common\Message;
 use Chiiya\Passes\Google\Passes\GenericClass;
 use Chiiya\Passes\Google\Repositories\GenericClassRepository;
 use Chiiya\Passes\Tests\Google\Fixtures\Passes;
@@ -55,5 +56,17 @@ class GenericClassTest extends TestCase
         $response = $repository->update($instance);
         $this->assertSame('1234567891234567891.718bf4ae-a7a5-11ed-afa1-0242ac120002', $response->id);
         $this->assertSameArray($instance->jsonSerialize(), $response->jsonSerialize());
+    }
+
+    #[Group('google')]
+    public function test_add_message(): void
+    {
+        $client = $this->createMockClient('generic-class-add-message');
+        $repository = new GenericClassRepository($client);
+        $instance = new GenericClass(...Passes::genericClass());
+        $message = new Message(header: 'Additional message!');
+        $response = $repository->addMessage($instance, $message);
+        $this->assertSame('1234567891234567891.718bf4ae-a7a5-11ed-afa1-0242ac120002', $response->id);
+        $this->assertContains($message->jsonSerialize(), $response->jsonSerialize()['messages']);
     }
 }
