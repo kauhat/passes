@@ -3,6 +3,7 @@
 namespace Chiiya\Passes\Google\Repositories;
 
 use Chiiya\Passes\Common\Component;
+use Chiiya\Passes\Google\Components\Common\Message;
 use Chiiya\Passes\Google\Passes\AbstractClass;
 use Chiiya\Passes\Google\Passes\AbstractObject;
 
@@ -15,4 +16,6 @@ interface ClassRepositoryInterface
     public function create(Component $instance): Component;
 
     public function update(AbstractClass|AbstractObject $instance): Component;
+
+    public function addMessage(AbstractClass $instance, Message $message): Component;
 }

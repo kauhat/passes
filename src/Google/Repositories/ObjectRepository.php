@@ -3,6 +3,8 @@
 namespace Chiiya\Passes\Google\Repositories;
 
 use Chiiya\Passes\Common\Component;
+use Chiiya\Passes\Google\Components\Common\Message;
+use Chiiya\Passes\Google\Passes\AbstractObject;
 
 abstract class ObjectRepository extends BaseRepository implements ObjectRepositoryInterface
 {
@@ -17,6 +19,18 @@ abstract class ObjectRepository extends BaseRepository implements ObjectReposito
         /** @var Component $class */
         $class = $this->getResponseClass();
         $response = $this->client->get($url);
+
+        return $class::decode($response);
+    }
+
+    /**
+     * Add a message to a passes object.
+     */
+    final public function addMessage(AbstractObject $instance, Message $message): Component
+    {
+        /** @var Component $class */
+        $class = $this->getInstanceClass();
+        $response = $this->client->put($this->buildEntityUrl($instance->id).'/addMessage', $message);
 
         return $class::decode($response);
     }
